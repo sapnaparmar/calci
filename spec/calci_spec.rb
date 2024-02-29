@@ -19,13 +19,13 @@ describe Calci do
     end
 
     it "should return sum of numbers if new line is given in string" do
-      sum = @calc.add("1\n2")
-      expect(sum).to eq(3)
+      sum = @calc.add("1\n2,3")
+      expect(sum).to eq(6)
     end
 
     it "should return sum of numbers if custom delimeter is given" do
-      sum = @calc.add("//;\n1\n2")
-      expect(sum).to eq(3)
+      sum = @calc.add("//;\n1\n2;5")
+      expect(sum).to eq(8)
     end
   end
 end
