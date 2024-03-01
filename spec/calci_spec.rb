@@ -31,8 +31,9 @@ describe Calci do
     end
 
     it "should return exception if number string contains any negative number" do
-      sum = @calc.add("1\n2,-3,-4")
-      expect(sum).to raise(NegativeNumber)
+      expect{
+        @calc.add("1\n2,-3,-4")
+      }.to raise_error(Calci::NegativeNumber, "negative numbers not allowed -3, -4")
     end
   end
 end
