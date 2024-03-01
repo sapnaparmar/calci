@@ -26,6 +26,13 @@ describe Calci do
     it "should return sum of numbers if custom delimeter is given" do
       sum = @calc.add("//;\n1\n2;5")
       expect(sum).to eq(8)
+      sum = @calc.add("//?\n1\n2?5?6")
+      expect(sum).to eq(14)
+    end
+
+    it "should return exception if number string contains any negative number" do
+      sum = @calc.add("1\n2,-3,-4")
+      expect(sum).to raise(NegativeNumber)
     end
   end
 end
